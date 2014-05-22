@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://MDX_Services.MDXService.isd.ibm.com/soapoverhttp/" xmlns:impl="http://MDX_Services.MDXService.isd.ibm.com/soapoverhttp/" xmlns:intf="http://MDX_Services.MDXService.isd.ibm.com/soapoverhttp/" xmlns:tns1="http://MDX_Services.MDXService.isd.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <schema targetNamespace="http://MDX_Services.MDXService.isd.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <complexType name="MDX_ServicesInAddress">
+    <sequence>
+     <element name="id" nillable="true" type="xsd:int"/>
+     <element name="addresslineone" nillable="true" type="xsd:string"/>
+     <element name="addresslinetwo" nillable="true" type="xsd:string"/>
+     <element name="addresslinethree" nillable="true" type="xsd:string"/>
+     <element name="city" nillable="true" type="xsd:string"/>
+     <element name="state" nillable="true" type="xsd:string"/>
+     <element name="postalcode" nillable="true" type="xsd:string"/>
+     <element name="country" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="MDX_ServicesOutAddress">
+    <sequence>
+     <element name="id" nillable="true" type="xsd:int"/>
+     <element name="housenumber" nillable="true" type="xsd:string"/>
+     <element name="streetprefixdirectional" nillable="true" type="xsd:string"/>
+     <element name="streetprefixtype" nillable="true" type="xsd:string"/>
+     <element name="streetname" nillable="true" type="xsd:string"/>
+     <element name="streetsuffixtype" nillable="true" type="xsd:string"/>
+     <element name="boxtype" nillable="true" type="xsd:string"/>
+     <element name="boxvalue" nillable="true" type="xsd:string"/>
+     <element name="floortype" nillable="true" type="xsd:string"/>
+     <element name="floorvalue" nillable="true" type="xsd:string"/>
+     <element name="unittype" nillable="true" type="xsd:string"/>
+     <element name="unitvalue" nillable="true" type="xsd:string"/>
+     <element name="buildingname" nillable="true" type="xsd:string"/>
+     <element name="cityname" nillable="true" type="xsd:string"/>
+     <element name="stateabbreviation" nillable="true" type="xsd:string"/>
+     <element name="zip" nillable="true" type="xsd:string"/>
+     <element name="countrycode" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="MDX_ServicesInPhone">
+    <sequence>
+     <element name="id" nillable="true" type="xsd:string"/>
+     <element name="referencenumber" nillable="true" type="xsd:decimal"/>
+    </sequence>
+   </complexType>
+   <complexType name="MDX_ServicesOutPhone">
+    <sequence>
+     <element name="id" nillable="true" type="xsd:string"/>
+     <element name="countrycode_mnphone" nillable="true" type="xsd:string"/>
+     <element name="areacode_mnphone" nillable="true" type="xsd:string"/>
+     <element name="exchange_mnphone" nillable="true" type="xsd:string"/>
+     <element name="number_mnphone" nillable="true" type="xsd:string"/>
+     <element name="extension_mnphone" nillable="true" type="xsd:string"/>
+     <element name="phoneformatted_mnphone" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="MDX_ServicesInOrgName">
+    <sequence>
+     <element name="id" nillable="true" type="xsd:string"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="MDX_ServicesOutOrgName">
+    <sequence>
+     <element name="id" nillable="true" type="xsd:string"/>
+     <element name="nametype" nillable="true" type="xsd:string"/>
+     <element name="primaryname" nillable="true" type="xsd:string"/>
+     <element name="namesuffix" nillable="true" type="xsd:string"/>
+     <element name="matchprimaryname" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="MDX_ServicesInPersonName">
+    <sequence>
+     <element name="id" nillable="true" type="xsd:string"/>
+     <element name="personnameprefix" nillable="true" type="xsd:string"/>
+     <element name="persongivennameone" nillable="true" type="xsd:string"/>
+     <element name="persongivennametwo" nillable="true" type="xsd:string"/>
+     <element name="persongivennamethree" nillable="true" type="xsd:string"/>
+     <element name="persongivennamefour" nillable="true" type="xsd:string"/>
+     <element name="personfamilyname" nillable="true" type="xsd:string"/>
+     <element name="personnamesuffix" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="MDX_ServicesOutPersonName">
+    <sequence>
+     <element name="id" nillable="true" type="xsd:string"/>
+     <element name="nametype" nillable="true" type="xsd:string"/>
+     <element name="gendercode" nillable="true" type="xsd:string"/>
+     <element name="nameprefix" nillable="true" type="xsd:string"/>
+     <element name="firstname" nillable="true" type="xsd:string"/>
+     <element name="middlename" nillable="true" type="xsd:string"/>
+     <element name="primaryname" nillable="true" type="xsd:string"/>
+     <element name="namegeneration" nillable="true" type="xsd:string"/>
+     <element name="namesuffix" nillable="true" type="xsd:string"/>
+     <element name="additionalname" nillable="true" type="xsd:string"/>
+     <element name="matchfirstname" nillable="true" type="xsd:string"/>
+     <element name="matchprimaryname" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+    <schema targetNamespace="http://MDX_Services.MDXService.isd.ibm.com/soapoverhttp/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns1="http://MDX_Services.MDXService.isd.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://MDX_Services.MDXService.isd.ibm.com"/>
+   <complexType name="ArrayOf_tns1_nillable_MDX_ServicesInAddress">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="MDX_ServicesInAddress" nillable="true" type="tns1:MDX_ServicesInAddress"/>
+    </sequence>
+   </complexType>
+   <element name="MDX_ADDRESS_STANDResponse">
+    <complexType>
+     <sequence>
+      <element name="MDX_ADDRESS_STANDReturn" nillable="true" type="impl:ArrayOf_tns1_nillable_MDX_ServicesOutAddress"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="MDX_PHONE_STAND">
+    <complexType>
+     <sequence>
+      <element name="arg1" nillable="true" type="impl:ArrayOf_tns1_nillable_MDX_ServicesInPhone"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="MDX_PHONE_STANDResponse">
+    <complexType>
+     <sequence>
+      <element name="MDX_PHONE_STANDReturn" nillable="true" type="impl:ArrayOf_tns1_nillable_MDX_ServicesOutPhone"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="MDX_ORGNAME">
+    <complexType>
+     <sequence>
+      <element name="arg1" nillable="true" type="impl:ArrayOf_tns1_nillable_MDX_ServicesInOrgName"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="MDX_ORGNAMEResponse">
+    <complexType>
+     <sequence>
+      <element name="MDX_ORGNAMEReturn" nillable="true" type="impl:ArrayOf_tns1_nillable_MDX_ServicesOutOrgName"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="MDX_PERSONNAME">
+    <complexType>
+     <sequence>
+      <element name="arg1" nillable="true" type="impl:ArrayOf_tns1_nillable_MDX_ServicesInPersonName"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="MDX_PERSONNAMEResponse">
+    <complexType>
+     <sequence>
+      <element name="MDX_PERSONNAMEReturn" nillable="true" type="impl:ArrayOf_tns1_nillable_MDX_ServicesOutPersonName"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="MDX_ADDRESS_STAND">
+    <complexType>
+     <sequence>
+      <element name="arg1" nillable="true" type="impl:ArrayOf_tns1_nillable_MDX_ServicesInAddress"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_tns1_nillable_MDX_ServicesOutAddress">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="MDX_ServicesOutAddress" nillable="true" type="tns1:MDX_ServicesOutAddress"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns1_nillable_MDX_ServicesInPhone">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="MDX_ServicesInPhone" nillable="true" type="tns1:MDX_ServicesInPhone"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns1_nillable_MDX_ServicesOutPhone">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="MDX_ServicesOutPhone" nillable="true" type="tns1:MDX_ServicesOutPhone"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns1_nillable_MDX_ServicesInOrgName">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="MDX_ServicesInOrgName" nillable="true" type="tns1:MDX_ServicesInOrgName"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns1_nillable_MDX_ServicesOutOrgName">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="MDX_ServicesOutOrgName" nillable="true" type="tns1:MDX_ServicesOutOrgName"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns1_nillable_MDX_ServicesInPersonName">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="MDX_ServicesInPersonName" nillable="true" type="tns1:MDX_ServicesInPersonName"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns1_nillable_MDX_ServicesOutPersonName">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="MDX_ServicesOutPersonName" nillable="true" type="tns1:MDX_ServicesOutPersonName"/>
+    </sequence>
+   </complexType>
+  </schema>
+  </wsdl:types>
+  <wsdl:message name="MDX_PERSONNAMERequest">
+    <wsdl:part element="impl:MDX_PERSONNAME" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="MDX_ADDRESS_STANDRequest">
+    <wsdl:part element="impl:MDX_ADDRESS_STAND" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="MDX_ADDRESS_STANDResponse">
+    <wsdl:part element="impl:MDX_ADDRESS_STANDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="MDX_ORGNAMEResponse">
+    <wsdl:part element="impl:MDX_ORGNAMEResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="MDX_PHONE_STANDResponse">
+    <wsdl:part element="impl:MDX_PHONE_STANDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="MDX_ORGNAMERequest">
+    <wsdl:part element="impl:MDX_ORGNAME" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="MDX_PHONE_STANDRequest">
+    <wsdl:part element="impl:MDX_PHONE_STAND" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="MDX_PERSONNAMEResponse">
+    <wsdl:part element="impl:MDX_PERSONNAMEResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="MDX_Services">
+    <wsdl:operation name="MDX_ADDRESS_STAND">
+      <wsdl:input message="impl:MDX_ADDRESS_STANDRequest" name="MDX_ADDRESS_STANDRequest"/>
+      <wsdl:output message="impl:MDX_ADDRESS_STANDResponse" name="MDX_ADDRESS_STANDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="MDX_PHONE_STAND">
+      <wsdl:input message="impl:MDX_PHONE_STANDRequest" name="MDX_PHONE_STANDRequest"/>
+      <wsdl:output message="impl:MDX_PHONE_STANDResponse" name="MDX_PHONE_STANDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="MDX_ORGNAME">
+      <wsdl:input message="impl:MDX_ORGNAMERequest" name="MDX_ORGNAMERequest"/>
+      <wsdl:output message="impl:MDX_ORGNAMEResponse" name="MDX_ORGNAMEResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="MDX_PERSONNAME">
+      <wsdl:input message="impl:MDX_PERSONNAMERequest" name="MDX_PERSONNAMERequest"/>
+      <wsdl:output message="impl:MDX_PERSONNAMEResponse" name="MDX_PERSONNAMEResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MDX_ServicesSOAPSoapBinding" type="impl:MDX_Services">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="MDX_ADDRESS_STAND">
+      <wsdlsoap:operation soapAction="MDX_ADDRESS_STAND"/>
+      <wsdl:input name="MDX_ADDRESS_STANDRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MDX_ADDRESS_STANDResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MDX_PHONE_STAND">
+      <wsdlsoap:operation soapAction="MDX_PHONE_STAND"/>
+      <wsdl:input name="MDX_PHONE_STANDRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MDX_PHONE_STANDResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MDX_ORGNAME">
+      <wsdlsoap:operation soapAction="MDX_ORGNAME"/>
+      <wsdl:input name="MDX_ORGNAMERequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MDX_ORGNAMEResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MDX_PERSONNAME">
+      <wsdlsoap:operation soapAction="MDX_PERSONNAME"/>
+      <wsdl:input name="MDX_PERSONNAMERequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MDX_PERSONNAMEResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MDX_Services">
+    <wsdl:port binding="impl:MDX_ServicesSOAPSoapBinding" name="MDX_ServicesSOAP">
+      <wsdlsoap:address location="http://ibminfosphere:9080/wisd/MDXService/MDX_Services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

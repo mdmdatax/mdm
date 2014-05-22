@@ -1,0 +1,83 @@
+<?page title="MDX :: Home " contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window id="window" apply="com.hcl.mdx.zk.ui.composer.IndexPageComposer">	
+    <style src="css/style.css" />
+    
+    <borderlayout sclass="complex-layout" height="810px" style="max-height:810px;overflow:auto">
+        <north size="90px" border="0">
+            <div>
+                <!-- <image sclass="complex-layout-header-img" src="images/ZK-Logo.gif" />-->
+                <label sclass="complex-layout-header-label" value="DataX - Data eXchanger" visible="true"/>
+            </div>
+        </north>
+        <!-- Sidebar -->
+        <west width="150px" border="0" flex="true" splittable="true" margins="0,5,0,0">
+            <div>
+                <panel width="100%" border="normal" title="Navigation" collapsible="true" open="false">
+                    <panelchildren style="padding:5px;">
+						<include src="includes/MDXToolBar.zul"/>
+                    </panelchildren>
+                </panel>
+                <panel width="100%" border="normal" title="Schema" collapsible="true" open="false">
+                    <panelchildren style="padding:5px;">
+						<include src="includes/MDXSchemaToolBar.zul"/>
+                    </panelchildren>
+                </panel>
+            </div>
+        </west>
+        <!-- Content -->
+        <center>
+            <borderlayout sclass="inner-border">
+                <north  border="0" margins="2,3,0,0">
+                </north>
+            <center border="0" margins="0,3,3,3">
+                <panel title="Master Data Exchanger" border="normal" >
+                    <panelchildren>
+                        <grid fixedLayout="true" style="border:0;">
+                            <rows>
+                                <row>
+                                    <div>
+                                        <html>
+                                        	<![CDATA[
+	               								 <p> Welcome to the <b>Master Data Exchanger</b>.
+	               								 <p> Click on the Navigation links on the left to get started
+            								]]>
+                                        </html>
+                                    </div>
+                                </row>
+                            </rows>
+                        </grid>
+                    </panelchildren>
+                </panel>
+            </center>	         
+            <!--  -->
+            <east border="0" margins="0,0,3,3">
+            </east>
+            <!--  -->
+            <south border="1" height="37%" margins="0,0,3,3">
+                <panel border="normal">
+                    <panelchildren>
+                        
+                    </panelchildren>
+                </panel>
+            </south>
+            <!--  -->
+            </borderlayout>
+
+        </center>
+        <south size="40px" border="0" style="background: none repeat scroll 0 0 ;">
+            <!-- <toolbar mold="panel" align="center">
+                <toolbarbutton label="Sign in" />
+                <toolbarbutton label="Home" />
+                <toolbarbutton label="Sitemap" />
+                <toolbarbutton label="Terms" />
+                <toolbarbutton label="Report Abuse" />
+                <toolbarbutton label="Print" />
+                <separator orient="vertical" bar="true" />
+                Powered by
+                <toolbarbutton label="ZK Borderlayout" />
+            </toolbar>-->
+        </south>
+    </borderlayout>
+    </window>
+</zk>

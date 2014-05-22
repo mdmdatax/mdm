@@ -1,0 +1,7 @@
+<?page id="schemaToolBar"?>
+<zk>
+   <vbox>
+          <toolbarbutton sclass="toolBarButton" label="Create Schema" href="../createSchema.zul"/>
+          <separator orient="horizontal" bar="true" />
+      </vbox>
+</zk>

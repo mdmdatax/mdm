@@ -1,0 +1,168 @@
+<?page title="MDX :: Standardize Data" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window id="window" apply="com.hcl.mdx.zk.ui.composer.StandardizeDataPageComposer">
+    <style src="css/style.css" />
+    
+    <borderlayout sclass="complex-layout" height="810px" style="max-height:810px;overflow:auto">
+        <north size="90px" border="0">
+            <div>
+                <!-- <image sclass="complex-layout-header-img" src="images/ZK-Logo.gif" />-->
+                <label sclass="complex-layout-header-label" value="Master Data eXchanger" visible="true"/>
+            </div>
+        </north>
+        <!-- Sidebar -->
+        <west width="150px" border="0" flex="true" splittable="true" margins="0,5,0,0">
+            <div>
+                <panel width="100%" border="normal" title="Navigation" collapsible="true">
+                    <panelchildren style="padding:5px;">
+                        <include src="includes/MDXToolBar.zul"/>
+                    </panelchildren>
+                </panel>
+                <panel width="100%" border="normal" title="Schema" collapsible="true" open="false">
+                    <panelchildren style="padding:5px;">
+						<include src="includes/MDXSchemaToolBar.zul"/>
+                    </panelchildren>
+                </panel>
+            </div>
+        </west>
+        <!-- <east width="150px" title="Quick Links" flex="true" margins="0,5,5,0" collapsible="true">
+            <html><![CDATA[
+                <ul>
+                    <li>Help</li>
+                    
+                </ul>
+            ]]></html>
+        </east>-->
+        <!-- Content -->
+        <center>
+             <portallayout>
+                <portalchildren style="padding: 5px">
+                	<panel title="Workflow Progress" border="normal" collapsible="true">
+                	<panelchildren>
+                		<grid>
+                    			<rows>
+                    				<row>
+                        			<div align="center">
+                        				<button id="wfBackButton" sclass="backButton" height="10px" image="images/Control_rewind_blue.png" tooltiptext="Previous Step"></button>
+                        				<html><![CDATA[&nbsp]]></html>
+                        				<label style="color: blue;font-weight: bold;font-size: 9px;"> Step 5 of 8</label>
+                        				<html><![CDATA[&nbsp]]></html>
+                        				<button id="wfFwdButton" sclass="fwdButton" image="images/Control_fastforward_blue.png" tooltiptext="Next Step"></button>
+                        			</div>
+                        		</row>
+                    			</rows>
+                    		</grid>
+                    		</panelchildren>
+                	</panel>
+                <panel id="topPanel" border="normal" title="Select Standardization Engine" collapsible="true">
+                    <panelchildren>
+                        <grid fixedLayout="true">
+                        	<columns>
+                        		<column/>
+                        		<column><label sclass="blackLabel" value="Engine"/></column>
+                        		<column><label sclass="blackLabel" value="Entity"/></column>
+                        	</columns>
+                			<rows>
+                			<row>
+                				<div>
+                					<label sclass="blackLabel" value="Select"/>
+                				</div>
+                				<div>
+                					<combobox id="standardizationEnginesList"/>
+                				</div>
+                				<div>
+                					<combobox id="standardizationEntitiesList"/>
+                				</div>
+                			</row>
+                			</rows>
+                		</grid>                       
+                    </panelchildren>
+                </panel>
+                <panel id="middlePanel" title="Configure Standardization Engine" collapsible="true" visible="false">
+                	<panelchildren id="stdizationConfigPanelChildren">
+                		
+                	</panelchildren>
+                </panel>
+                <panel border="normal" title="View Data" collapsible="true" id="dataPreviewPanel">
+                	<panelchildren id="dataPreviewPanelChildren" style="height:400px;max-height:400px;overflow:auto">
+                		<grid fixedLayout="true">
+                			<rows>
+                			<row>
+                				<div>
+                					<label sclass="blackLabel" value="Select Table"/>
+                				</div>
+                				<div>
+                					<combobox id="dataPreviewTablesList"/>
+                				</div>
+                			</row>
+                			</rows>
+                		</grid>
+                	</panelchildren>
+                </panel>	
+                <panel id="progressPanel" title="Progress" border="normal" collapsible="true" visible="false">
+                    <panelchildren>
+                        <grid fixedLayout="true" style="border:0;">
+                            <rows>
+                                <row spans="2">
+                                	<div>
+                                		<progressmeter style="width:820px;" id="dataTransferMeter"></progressmeter>
+                                	</div>
+                                </row>
+                                <row>
+                                    <div>
+                                    	<label sclass="pastelBlueLabel">Activity</label>
+                                    </div>
+                                    <div>
+                                    	<label sclass="progressLabel" id="processActivity" />
+                                    </div>
+                                </row>
+                                <row>
+                                	<div>
+                                    	<label sclass="pastelBlueLabel">Status</label>
+                                    </div>
+                                    <div>
+                                    	<label sclass="progressLabel" id="processStatus" />
+                                    </div>
+                                </row>
+                                <row>
+                                	<div>
+                                    	<label sclass="pastelBlueLabel">Elapsed</label>
+                                    </div>
+                                    <div>
+                                    	<label sclass="progressLabel" id="timeElapsed" />
+                                    </div>
+                                </row>
+                                <row>
+                                	<div>
+                                    	<label sclass="pastelBlueLabel">Report</label>
+                                    </div>
+                                    <div>
+                                    	<label sclass="progressLabel" id="report" />
+                                    </div>
+                                </row>
+                                <row spans="2">
+                                	<div><button id="progressHideButton" sclass="formButton" label="Hide Progress"></button></div>
+                                </row>
+                              </rows>
+                              </grid>
+                    </panelchildren>
+                </panel> 
+            </portalchildren>
+			</portallayout>
+        </center>
+        <south size="40px" border="0" style="background: none repeat scroll 0 0 ;">
+            <!-- <toolbar mold="panel" align="center">
+                <toolbarbutton label="Sign in" />
+                <toolbarbutton label="Home" />
+                <toolbarbutton label="Sitemap" />
+                <toolbarbutton label="Terms" />
+                <toolbarbutton label="Report Abuse" />
+                <toolbarbutton label="Print" />
+                <separator orient="vertical" bar="true" />
+                Powered by
+                <toolbarbutton label="ZK Borderlayout" />
+            </toolbar>-->
+        </south>
+    </borderlayout>
+    </window>
+</zk>

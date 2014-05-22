@@ -1,0 +1,17 @@
+<?page id="navToolBar"?>
+<zk>
+   <vbox>
+          <toolbarbutton id="homeButton" sclass="toolBarButton" label="Home" href="../index.zul"/>
+          <separator orient="horizontal" bar="true" />
+          <toolbarbutton sclass="toolBarButton" label="Initial Data Load" href="../initialDataLoad.zul"/>
+          <separator orient="horizontal" bar="true" />
+          <!-- <toolbarbutton sclass="toolBarButton" label="Cleanse Data" href="../cleanseData.zul"/>
+          <separator orient="horizontal" bar="true" />
+          <toolbarbutton sclass="toolBarButton" label="Standardize Data" href="../standardizeData.zul"/>
+          <separator orient="horizontal" bar="true" />
+          <toolbarbutton sclass="toolBarButton" label="De-duplicate Data" href="../runDeterministicMatchRules.zul"/>
+          <separator orient="horizontal" bar="true" />
+          <toolbarbutton sclass="toolBarButton" label="View Golden Records" href="../viewGoldenRecords.zul"/>
+          <separator orient="horizontal" bar="true" />-->
+      </vbox>
+</zk>

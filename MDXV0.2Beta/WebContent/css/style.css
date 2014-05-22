@@ -1,0 +1,116 @@
+       .z-borderlayout {
+            background: ##FFFFF
+        }
+         
+        .complex-layout,
+        .complex-layout .z-south,
+        .complex-layout .z-west{
+            background: none repeat scroll 0 0 #C5E6EF;
+        }
+        
+        .complex-layout .z-north {
+            background: none repeat scroll 0 0 #008BB6;
+        }
+        
+        img.complex-layout-header-img {
+            padding: 0 10px;
+        }
+        
+        .complex-layout-header-label {
+            position: relative;
+            top: 20px;
+            padding-left: 5px;
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .inner-border,
+        .inner-border .z-north,
+        .inner-border .z-west,
+        .inner-border .z-south,
+        .inner-border .z-east {
+            background: #FFFFFF;
+        }
+        
+        .toolBarButton{
+        	font-family: arial,sans-serif;
+        	font-weight: normal;
+        	font-size: 11px;
+        	color: black;
+        	padding: 2px;
+        	position: relative;
+        	text-decoration: none;
+        } 
+        
+        .blueLabel{
+        	color: #2966B8;
+        	font-weight: bold;
+        	font-size: 10px;
+        }
+        
+        .formButton{
+	       	font-weight: bold;
+	       	font-size: 9px;
+	 	}
+	 	
+		.blueLabel{
+	       	color: #2966B8;
+	       	font-weight: bold;
+	       	font-size: 10px;
+	 	}
+	
+		.pastelBlueLabel{
+	       	color: #2F74D0;
+	       	font-weight: bold;
+	       	font-size: 10px;
+	 	} 
+		
+		.progressLabel{
+	       	font-weight: bold;
+	       	font-size: 9px;
+       	 } 
+       	 .blackLabel{
+	       	font-weight: bold;
+	       	font-size: 9px;
+	 	}
+	 	.toolBarButton9px{
+        	font-weight: bold;
+        	font-size: 9px;
+        	color: black;
+        	text-decoration: none;
+        }
+	 	.lv1SubGridClmHeader{
+	 		background-color: #FAFBDF;
+	 	}
+	 	.progressMeterCompletedStyle{
+	 		background: #31B94D;
+	 	}
+	 	.progressMeterErrorStyle{
+	 		background: #B22222;
+	 	}
+	 	.preferredInfoHighlightColor{
+	 		background-color: #8ADCFF;
+	 	}
+	 	.backButton{
+	 		height: 18px;
+	 		width: 18px;
+	 	}
+	 	.fwdButton{
+	 		height: 18px;
+	 		width: 18px;
+	 	}
+	 	.filterImgStyleClass{
+	 		height: 13px;
+	 		width: 13px;
+	 	}
+	 	.redLabel{
+	       	font-weight: bold;
+	       	font-size: 9px;
+	       	color: red;
+	 	}
+	 	.forestGreenLabel{
+	       	font-weight: bold;
+	       	font-size: 9px;
+	       	color: #238E23;
+	 	}
